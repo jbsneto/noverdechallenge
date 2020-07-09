@@ -16,15 +16,18 @@
 5. Install libs
 > pip install -r requirements.txt
 
-6. Run migrate
+6. Run makemigrations
+> python manage.py makemigrations
+
+7. Run migrate
 > python manage.py migrate
 
-7. Run a RabbitMQ server and insert IP
+8. Run a RabbitMQ server and insert IP
 > setting.CELERY_BROKER_URL
 
-8. Run Celery server
+9. Run Celery server
 > celery -A noverdechallenge worker --loglevel=info
 
-9. Run testing server
+10. Run testing server
 > python manage.py runserver
 
