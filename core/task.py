@@ -69,8 +69,6 @@ class ValidateCredit:
                 self.set_approved(client, pmt, parcela)
                 return True
             else:
-                #Seta a ultima proposta
-                #self.set_approved(client, pmt, parcela)
                 #tenta uma parcela menor
                 parcela += 3
 
