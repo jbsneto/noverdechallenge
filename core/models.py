@@ -43,9 +43,6 @@ class Client(models.Model):
     #options: age, score, commitment
     refused_policy = models.CharField(max_length=10, choices=SITUATION_CHOICES, blank=True, null=True)
     #montante liberado em caso de aprovado
-    '''
-    Não tá o montante, tá o valor da parcela, lembrar de tirar ou colocar para variável "amont_wanted"
-    '''
     amount_approved = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     #Quantidade de parcelas aprovadas
     terms_approved = models.PositiveSmallIntegerField(blank=True, null=True)
