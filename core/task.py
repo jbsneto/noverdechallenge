@@ -10,34 +10,13 @@ from core.models import Client
 class ValidateCredit:
 
     def get_interest_rate(self, score, parcela):
-        if score >= 900:
-            if parcela == 6:
-                return 0.039
-            elif parcela == 9:
-                return 0.042
-            elif parcela == 12:
-                return 0.045
-        elif score >= 800:
-            if parcela == 6:
-                return 0.047
-            elif parcela == 9:
-                return 0.05
-            elif parcela == 12:
-                return 0.053
-        elif score >= 700:
-            if parcela == 6:
-                return 0.055
-            elif parcela == 9:
-                return 0.058
-            elif parcela == 12:
-                return 0.061
-        elif score >= 600:
-            if parcela == 6:
-                return 0.064
-            elif parcela == 9:
-                return 0.066
-            elif parcela == 12:
-                return 0.069
+        interest_matrix = {
+            (600, 6): 0.064, (600, 9): 0.066, (600, 12): 0.069,
+            (700, 6): 0.055, (700, 9): 0.058, (700, 12): 0.061,
+            (800, 6): 0.047, (800, 9): 0.050, (800, 12): 0.053,
+            (900, 6): 0.039, (900, 9): 0.042, (900, 12): 0.045
+        }
+        return interest_matrix[score//100*100, parcela]
 
     def set_refused(self, client, refused):
         client.status = 'CP' #Complete

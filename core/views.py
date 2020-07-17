@@ -21,7 +21,6 @@ class ClientCreateView(CreateAPIView):
 class ClientRetrieveView(RetrieveAPIView):
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
-
     
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
