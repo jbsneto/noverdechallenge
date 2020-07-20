@@ -50,7 +50,6 @@ class Client(models.Model):
     def get_age(self):
         born = self.birthdate
         today = date.today()
-        today.strftime(settings.DATE_INPUT_FORMAT)
         return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
 
     def __str__(self):
