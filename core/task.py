@@ -61,9 +61,8 @@ class ValidateCredit:
         if r.status_code == 200:
             stream = io.BytesIO(r.content)
             data = JSONParser().parse(stream)
-            #return data['score']
-            return 700
-
+            return data['score']
+            
     def get_commitment(self, cpf, url='https://challenge.noverde.name/commitment'):
         '''
             Colocar validacao para caso o servico não estiver funcionando, ele tentar  rodar a task depois
@@ -72,8 +71,7 @@ class ValidateCredit:
         if r.status_code == 200:
             stream = io.BytesIO(r.content)
             data = JSONParser().parse(stream)
-            #return data['commitment']
-            return 0.5
+            return data['commitment']
 
     #Log no shell celery
     def get_log_celery(self, client):
